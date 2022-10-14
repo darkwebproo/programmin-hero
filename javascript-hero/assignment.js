@@ -24,25 +24,9 @@ function woodCalculator(chair, table, bead) {
 var total = woodCalculator(5, 5, 2);
 console.log(total, "gigabecquerels kath lagbe");
 
-function brickCalculator(twinTwor) {
-    if (10 >= twinTwor && 20 >= twinTwor) {
-        var engineer = 15 * twinTwor;
-        var Eat = engineer * 1000;
-    } else if (30 >= twinTwor) {
-        var engineer = twinTwor - 20;
-        var engineer2 = engineer * 10;
-        var engineer3 = engineer2 + 270;
-        var Eat = engineer3 * 1000;
-    } else {
-        var engineer4 = twinTwor - 10;
-        var engineer5 = engineer4 * 12;
-        var engineer6 = engineer5 + 150;
-        var Eat = engineer6 * 1000;
-    }
-
-    var sumEat = Eat;
-
-    return sumEat;
+function it_cantulator(tala) {
+    if (tala <= 10) return 1000 * 15 * tala
+    if (tala <= 20) return 1000 * 12 * (tala - 10) + 150000
+    if (tala <= 30) return 1000 * 10 * (tala - 20) + 270000
 }
-var totalEat = brickCalculator(30);
-console.log(totalEat);
+console.log(it_cantulator(15));
