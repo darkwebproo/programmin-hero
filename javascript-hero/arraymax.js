@@ -3,7 +3,7 @@ var max = marks[0];
 
 for (i = 0; i < marks.length; i++) {
     var element = marks[i];
-    if (element => max) {
+    if (element >= max) {
         max = element;
     }
 }

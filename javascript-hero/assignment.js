@@ -30,3 +30,30 @@ function it_cantulator(tala) {
     if (tala <= 30) return 1000 * 10 * (tala - 20) + 270000
 }
 console.log(it_cantulator(15));
+
+//  adta array er modho theke sobtheke boro name print kora //////////////////////////////////
+
+var name = ["shakil", "bappy", "imran", "ahmad", "hossen"];
+var count = name[0];
+for (i = 0; i < name.length; i++) {
+    var element = name[i];
+    if (count <= element) {
+        count = element;
+    }
+}
+// console.log(name.length);
+
+let names = ["xxxzzxx", "Imran", "Shakil", "Bappy", "Rakib"];
+
+function maxNames(arry) {
+    var max = [0];
+    for (let i = 0; i < arry.length; i++) {
+        const element = arry[i];
+        if (max < element) {
+            max = element;
+        }
+    }
+    return max;
+}
+var result = maxNames(names);
+console.log(result);
