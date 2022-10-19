@@ -10,18 +10,18 @@ var result = factorial(5);
 console.log(result);
 
 
-function fibonacci(n) {
+function fibo(n) {
     if (n == 0) {
         return 0;
     }
     if (n == 1) {
         return 1;
     } else {
-        return fibonacci(n - 1) + fibonacci(n - 2);
+        return fibo(n - 1) + fibo(n - 2);
     }
 }
 
-var result = fibonacci(3);
+var result = fibo(3);
 console.log(result);
 
 // ====**********************************=====//
