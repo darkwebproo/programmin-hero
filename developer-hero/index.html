@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <section>
+            <h1 id="header">Hello Web Developer!</h1>
+            <article>
+                <h3>article-1</h3>
+                <p class="author">author-1</p>
+                <p id="ph" class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam labore blanditiis, ad eius eum sit dolorum optio maxime nihil id molestiae ipsa illo delectus quod laboriosam vel facilis consequatur temporibus.</p>
+            </article>
+            <article>
+                <h3>article-2</h3>
+                <p class="author">author-2</p>
+                <p class="description">Aliquam sint nobis incidunt, voluptas velit ea in molestiae non quos accusantium excepturi harum amet quae, similique ullam quas modi, quo et aspernatur. Quaerat, obcaecati. Vero, dolore. Totam, amet fuga!</p>
+            </article>
+            <article>
+                <h3>article-3</h3>
+                <p class="author">author-3</p>
+                <p class="description">Modi quis non quod voluptas qui soluta rem ullam? Eaque sed dolores nihil id recusandae aliquid aperiam amet architecto facere unde exercitationem, autem sit deserunt laborum culpa excepturi ad rerum.</p>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('header').style.color = "red";
+
+        // SELECTOR FOR CLASS NAME BY FOR & WHILE LOOPS //
+        var authors = document.getElementsByClassName('author');
+        for (i = 0; i < authors.length; i++) {
+            var element = authors[i];
+            console.log(element);
+            element.style.color = "red";
+            element.innerHTML = "Lekhok-" + i;
+        };
+
+        // SET THE TITLE ATTRIBUTE BY JS //
+        const title = document.querySelector('h1');
+        title.setAttribute('title', "Welcom !")
+
+        // NEW CREATE ELEMENT FOR WEB PAGE BY JS //
+        const para = document.querySelector('h3 + p');
+        const newPara = document.createElement('p');
+        newPara.innerHTML = "This is added new paragraph by javascript";
+        para.appendChild(newPara);
+    </script>
+</body>
+
+</html>

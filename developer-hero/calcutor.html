@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcutor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+         :root {
+            --primary-light: #8abdff;
+            --primary: #6d5dfc;
+            --primary-dark: #5b0eeb;
+            --white: #FFFFFF;
+            --greyLight-1: #E4EBF5;
+            --greyLight-2: #c8d0e7;
+            --greyLight-3: #bec8e4;
+            --greyDark: #9baacf;
+            --shadow: .3rem .3rem .6rem var(--greyLight-2), -.2rem -.2rem .5rem var(--white);
+            --inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), inset -.2rem -.2rem .5rem var(--white);
+        }
+        
+        #calculator {
+            width: 18rem;
+            height: 29rem;
+            margin: 5rem auto;
+            padding-top: 2rem;
+            background: var(--greyLight-1);
+            border-radius: 40px;
+            display: grid;
+            grid-template-rows: 20% 70%;
+            align-items: center;
+            justify-content: center;
+            /* box-shadow: var(--inner-shadow); */
+        }
+        
+        #calculator-header {
+            height: 4.5rem;
+            width: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* align-items: center; */
+            /* justify-content: center; */
+        }
+        
+        .brand {
+            color: var(--primary-light)
+        }
+        
+        #input-value {
+            height: 2.5rem;
+            width: 100%;
+            border-radius: 0.5rem;
+            font-size: 1.5rem;
+            padding: 0.3rem;
+            color: var(--greyLight-3);
+            background: var(--greyLight);
+            box-shadow: var(--inner-shadow);
+            text-align: right;
+            border: none;
+        }
+        
+         ::placeholder {
+            font-size: 1.5rem;
+            color: var(--greyLight-3);
+        }
+        
+        #calculator-content {
+            display: grid;
+            gap: 1rem 1rem;
+            padding-top: 2rem;
+        }
+        
+        section {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .btn {
+            background: var(--greyLight);
+            box-shadow: var(--shadow);
+            color: var(--primary-light);
+            font-size: 1.5rem;
+            display: flex;
+            width: 3rem;
+            height: 3rem;
+            padding: 0.5rem;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: none;
+        }
+        
+        .active {
+            width: 9rem;
+            border-radius: 1rem;
+            box-shadow: none;
+            color: var(--greyLight-1);
+            background: var(--primary-light);
+        }
+        
+        .active:hover {
+            box-shadow: none !important;
+        }
+        /* .btn:hover {
+            box-shadow: var(--inner-shadow);
+        } */
+    </style>
+</head>
+
+<body bgcolor="#9baacf">
+    <div id="calculator">
+        <div id="calculator-header">
+            <b class="brand">CANON</b>
+            <form name="form">
+                <input type="text" id="input-value" name="display" placeholder="0">
+            </form>
+        </div>
+        <div id="calculator-content">
+            <section>
+                <!-- <div class="btn" id="btn">AC</div> -->
+                <input type="button" class="btn" value="AC" onclick="display.value = null">
+                <!-- <div clabuttonbtn" id="btn">^</div> -->
+                <input type="button" class="btn" value="^" onclick="calculate(this.value)">
+                <!-- <div clabuttonbtn" id="btn">%</div> -->
+                <input type="button" class="btn" value="%" onclick="calculate(this.value)">
+                <!-- <div clabuttonbtn" id="btn">/</div> -->
+                <input type="button" class="btn" value="/" onclick="calculate(this.value)">
+            </section>
+            <section>
+                <!-- <div class="btn" id="">7</div> -->
+                <input class="btn" type="button" value="7" onclick="calculate(this.value)">
+                <!-- <div class="btn" id="">8</div> -->
+                <input type="button" class="btn" value="8" onclick="calculate(this.value)">
+                <!-- <div clabuttonbtn" id="">9</div> -->
+                <input type="button" class="btn" value="9" onclick="calculate(this.value)">
+                <!-- <div clabuttonbtn" id="">*</div> -->
+                <input type="button" class="btn" value="*" onclick="calculate(this.value)">
+            </section>
+            <section>
+                <!-- <div class="btn" id="">4</div> -->
+                <input type="button" class="btn" value="4" onclick="calculate(this.value)">
+                <!-- <div clabuttonbtn" id="">5</div> -->
+                <input type="button" class="btn" value="5" onclick="calculate(this.value)">
+                <!-- <div clabuttonbtn" id="">6</div> -->
+                <input type="button" class="btn" value="6" onclick="calculate(this.value)">
+                <!-- <div clabuttonb class="btn"tn" id="">-</div> -->
+                <input type="button" class="btn" value="-" onclick="calculate(this.value)">
+            </section>
+            <section>
+                <!-- <div class="btn" id="">1</div> -->
+                <input type="button" class="btn" value="1" onclick="calculate(this.value)">
+                <!-- <div clabuttonbtn" id="">2</div> -->
+                <input type="button" class="btn" value="2" onclick="calculate(this.value)">
+                <!-- <div clabuttonbtn" id="">3</div> -->
+                <input type="button" class="btn" value="3" onclick="calculate(this.value)">
+                <!-- <div clabuttonbtn" id="">+</div> -->
+                <input type="button" class="btn" value="+" onclick="calculate(this.value)">
+            </section>
+            <section>
+                <!-- <div class="btn" id="">0</div> -->
+                <input type="button" class="btn" value="0" onclick="calculate(this.value)">
+                <!-- <div clabuttonbtn" id="">.</div> -->
+                <input type="button" class="btn" value="." onclick="calculate(this.value)">
+                <!-- <div clabuttonbtn active" id="">=</div> -->
+                <input type="submit" name="btn" class="btn active" value="=" onclick="display.value = eval(display.value)">
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function calculate(x) {
+            form.display.value = form.display.value + x;
+        }
+    </script>
+</body>
+
+</html>
